@@ -30,6 +30,7 @@
   "dependencies": {
     "@babel/runtime": "^7.18.9",
     "@manypkg/cli": "^0.19.1",
+    "@nderscore/tamagui-typescript-plugin": "^0.5.3",
     "check-dependency-version-consistency": "^3.0.3",
     "eslint": "^8.21.0",
     "node-gyp": "^9.3.1",

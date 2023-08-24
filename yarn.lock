@@ -3371,6 +3371,19 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"@nderscore/tamagui-typescript-plugin@npm:^0.5.3":
+  version: 0.5.3
+  resolution: "@nderscore/tamagui-typescript-plugin@npm:0.5.3"
+  dependencies:
+    color: 4.2.3
+  peerDependencies:
+    "@tamagui/core": "*"
+    "@tamagui/helpers": "*"
+    typescript: ">=4.8"
+  checksum: ebf2d45d189dc9caf159b1de475add3c53b4a5592084145c70913e1b39172f73173b4b570e6293ee988121692f9634288bf73018030aaffea6929635f4045456
+  languageName: node
+  linkType: hard
+
 "@next/env@npm:13.4.4":
   version: 13.4.4
   resolution: "@next/env@npm:13.4.4"
@@ -7705,7 +7718,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"color@npm:^4.2.3":
+"color@npm:4.2.3, color@npm:^4.2.3":
   version: 4.2.3
   resolution: "color@npm:4.2.3"
   dependencies:
@@ -14718,6 +14731,7 @@ __metadata:
   dependencies:
     "@babel/runtime": ^7.18.9
     "@manypkg/cli": ^0.19.1
+    "@nderscore/tamagui-typescript-plugin": ^0.5.3
     check-dependency-version-consistency: ^3.0.3
     eslint: ^8.21.0
     node-gyp: ^9.3.1

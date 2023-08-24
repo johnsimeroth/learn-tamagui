@@ -26,10 +26,46 @@
     "strictNullChecks": true,
     "target": "es2020",
     "types": ["node"],
-    "lib": ["dom", "esnext"]
+    "lib": ["dom", "esnext"],
+    "plugins": [
+      {
+        "name": "@nderscore/tamagui-typescript-plugin",
+        // all settings are optional, the defaults are shown below as an example:
+        //
+        // relative or absolute path to a tamagui app (parent folder of .tamagui)
+        "pathToApp": "apps/next",
+        //
+        // the default theme to show for theme tokens when inlined
+        "defaultTheme": "light",
+        //
+        // the size (in pixels) of color tiles in previews
+        "colorTileSize": 18,
+        //
+        // options for filtering autocomplete suggestions
+        "completionFilters": {
+          //
+          // set false to hide non-theme color tokens
+          "showColorTokens": true,
+          //
+          // set false to hide $true and $-true tokens from all scales
+          "showTrueTokens": true,
+          //
+          // per-scale lists of specific token names to exclude from autocomplete results
+          "custom": {
+            // "themeColor": [],
+            // "color": [],
+            // "size": [],
+            // "space": [],
+            // "radius": [],
+            // "zIndex": []
+          }
+        }
+      }
+    ]
   },
   "exclude": ["_"],
   "typeAcquisition": {
     "enable": true
   }
 }
+
