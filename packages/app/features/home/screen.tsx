@@ -1,97 +1,51 @@
-import {
-  Anchor,
-  Button,
-  H1,
-  Paragraph,
-  Separator,
-  Sheet,
-  useToastController,
-  XStack,
-  YStack,
-} from '@my/ui'
-import { ChevronDown, ChevronUp } from '@tamagui/lucide-icons'
+import { ScrollView, XStack, YStack, Theme, H1, H2, Paragraph, Card, useThemeName, ThemeName } from '@my/ui'
+// import {useWindowDimensions} from 'react-native';
 import React, { useState } from 'react'
-import { useLink } from 'solito/link'
 
-export function HomeScreen() {
-  const linkProps = useLink({
-    href: '/user/nate',
-  })
+import CustomSelect from '@my/ui/src/CustomSelect'
 
+function Preview() {
+  const [subTheme, setSubTheme] = useState<ThemeName>('blue')
+  const themeName = useThemeName()
+  // const {height} = useWindowDimensions()
   return (
-    <YStack f={1} jc="center" ai="center" p="$4" space>
-      <YStack space="$4" maw={600}>
-        <H1 ta="center">Welcome to Tamagui.</H1>
-        <Paragraph ta="center">
-          Here's a basic starter to show navigating from one screen to another. This screen uses the
-          same code on Next.js and React Native.
-        </Paragraph>
-
-        <Separator />
-        <Paragraph ta="center">
-          Made by{' '}
-          <Anchor color="$color12" href="https://twitter.com/natebirdman" target="_blank">
-            @natebirdman
-          </Anchor>
-          ,{' '}
-          <Anchor
-            color="$color12"
-            href="https://github.com/tamagui/tamagui"
-            target="_blank"
-            rel="noreferrer"
-          >
-            give it a ⭐️
-          </Anchor>
+    <Theme name={subTheme}>
+      <YStack
+        f={1}
+        ai='flex-start'
+        space='$2'
+        bg={themeName === 'dark' ? 'black' : 'white'}
+        p='$8'
+      >
+        <YStack ai='center' w='100%'>
+          <Card elevation='$1' p='$4.5' w='100%'>
+            <H1 textTransform='uppercase' ta='center'>
+              Learn Tamagui
+            </H1>
+          </Card>
+        </YStack>
+        <H2 textTransform='uppercase'>{themeName} mode</H2>
+        <Paragraph fontSize='$6'>Change tint with the dropdown below</Paragraph>
+        <CustomSelect callback={setSubTheme} />
+        <Paragraph>
+        This page is a preview of how some of the basic Tamagui UI kit components look with various themes applied. Try adjusting tint in both light and dark mode. This page is also fully compatible with native platforms.
         </Paragraph>
       </YStack>
-
-      <XStack>
-        <Button {...linkProps}>Link to user</Button>
-      </XStack>
-
-      <SheetDemo />
-    </YStack>
+     </Theme>
   )
 }
 
-function SheetDemo() {
-  const [open, setOpen] = useState(false)
-  const [position, setPosition] = useState(0)
-  const toast = useToastController()
-
+export function HomeScreen() {
   return (
-    <>
-      <Button
-        size="$6"
-        icon={open ? ChevronDown : ChevronUp}
-        circular
-        onPress={() => setOpen((x) => !x)}
-      />
-      <Sheet
-        modal
-        open={open}
-        onOpenChange={setOpen}
-        snapPoints={[80]}
-        position={position}
-        onPositionChange={setPosition}
-        dismissOnSnapToBottom
-      >
-        <Sheet.Overlay animation="lazy" enterStyle={{ opacity: 0 }} exitStyle={{ opacity: 0 }} />
-        <Sheet.Frame ai="center" jc="center">
-          <Sheet.Handle />
-          <Button
-            size="$6"
-            circular
-            icon={ChevronDown}
-            onPress={() => {
-              setOpen(false)
-              toast.show('Sheet closed!', {
-                message: 'Just showing how toast works...',
-              })
-            }}
-          />
-        </Sheet.Frame>
-      </Sheet>
-    </>
+    <ScrollView>
+      <XStack flex={1}>
+        <Theme name='light'>
+          <Preview />
+        </Theme>
+        <Theme name='dark'>
+          <Preview />
+        </Theme>
+      </XStack>
+    </ScrollView>
   )
 }

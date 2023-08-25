@@ -1,8 +1,8 @@
 {
   "expo": {
-    "name": "[yourprojectsname]",
-    "slug": "[yourprojectsname]",
-    "scheme": "[yourprojectsname]",
+    "name": "learntamagui",
+    "slug": "learntamagui",
+    "scheme": "learntamagui",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
