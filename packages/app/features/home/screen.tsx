@@ -50,7 +50,7 @@ function ComponentGroup({ id }) {
   const [selectValue, setSelectValue] = useState('apple')
 
   return (
-    <YStack space='$6' ai='center' bc='$background'>
+    <YStack space='$6' ai='center' boc='$borderColor' bw='$1' br='$8' p='$5' bs='dashed' bg='$backgroundPress'>
       <CustomSelect value={selectValue} onValueChange={setSelectValue} items={fruits} />
       <Input placeholder='Type something' w='100%' />
       <XGroup bg='none' w='100%'>
