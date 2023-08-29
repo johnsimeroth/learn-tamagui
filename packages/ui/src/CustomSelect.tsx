@@ -1,21 +1,15 @@
 import { Check, ChevronDown, ChevronUp } from '@tamagui/lucide-icons'
-import { useMemo, useState, Dispatch, SetStateAction } from 'react'
+import { useMemo } from 'react'
 import { Adapt, Select, SelectProps, Sheet, YStack, getFontSize, ThemeName } from 'tamagui'
 import { LinearGradient } from '@tamagui/linear-gradient'
 
 interface CustomSelectProps extends SelectProps {
-  callback?: Dispatch<SetStateAction<ThemeName>>
+  items: string[]
 }
 
 export default function CustomSelect(props: CustomSelectProps) {
-  const [val, setVal] = useState('blue')
-  function handleSelect(value: string) {
-    setVal(value)
-    if (props.callback) props.callback(value as ThemeName);
-  }
-
   return (
-    <Select id='tint' value={val} onValueChange={handleSelect} {...props}>
+    <Select id='tint' value={props.value} onValueChange={props.onValueChange} {...props}>
       <Select.Trigger width={220} iconAfter={ChevronDown}>
         <Select.Value />
       </Select.Trigger>
@@ -51,22 +45,27 @@ export default function CustomSelect(props: CustomSelectProps) {
           <YStack zIndex={10}>
             <ChevronUp size={20} />
           </YStack>
-          <LinearGradient start={[0, 0]} end={[1, 0]} colors={['$backgroundTransparent', '$background']} fullscreen/>
+          <LinearGradient
+            start={[0, 0]}
+            end={[1, 0]}
+            colors={['$backgroundTransparent', '$background']}
+            fullscreen
+          />
         </Select.ScrollUpButton>
         <Select.Viewport minWidth={200}>
           {useMemo(
             () =>
-              items.map((item, i) => {
+              props.items.map((item, i) => {
                 return (
-                  <Select.Item index={i} key={item.name} value={item.name.toLowerCase()}>
-                    <Select.ItemText>{item.name}</Select.ItemText>
+                  <Select.Item index={i} key={item} value={item.toLowerCase()}>
+                    <Select.ItemText>{item}</Select.ItemText>
                     <Select.ItemIndicator marginLeft='auto'>
                       <Check size={16} />
                     </Select.ItemIndicator>
                   </Select.Item>
                 )
               }),
-            [items]
+            [props.items]
           )}
 
           {props.native && (
@@ -94,38 +93,14 @@ export default function CustomSelect(props: CustomSelectProps) {
           <YStack zIndex={10}>
             <ChevronDown size={20} />
           </YStack>
-          <LinearGradient start={[0, 0]} end={[0, 1]} colors={['$backgroundTransparent', '$background']} fullscreen/>
+          <LinearGradient
+            start={[0, 0]}
+            end={[0, 1]}
+            colors={['$backgroundTransparent', '$background']}
+            fullscreen
+          />
         </Select.ScrollDownButton>
       </Select.Content>
     </Select>
   )
 }
-const items = [
-  { name: 'Blue' },
-  { name: 'Green' },
-  { name: 'Red' },
-  { name: 'Pink' },
-  { name: 'Yellow' },
-  { name: 'Apple' },
-  { name: 'Pear' },
-  { name: 'Blackberry' },
-  { name: 'Peach' },
-  { name: 'Apricot' },
-  { name: 'Melon' },
-  { name: 'Honeydew' },
-  { name: 'Starfruit' },
-  { name: 'Blueberry' },
-  { name: 'Raspberry' },
-  { name: 'Strawberry' },
-  { name: 'Mango' },
-  { name: 'Pineapple' },
-  { name: 'Lime' },
-  { name: 'Lemon' },
-  { name: 'Coconut' },
-  { name: 'Guava' },
-  { name: 'Papaya' },
-  { name: 'Orange' },
-  { name: 'Grape' },
-  { name: 'Jackfruit' },
-  { name: 'Durian' },
-]
