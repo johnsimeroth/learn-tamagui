@@ -18,7 +18,7 @@ export const NativeToast = () => {
       y={0}
       opacity={1}
       scale={1}
-      animation="quick"
+      animation="fast"
     >
       <YStack>
         <Toast.Title>{currentToast.title}</Toast.Title>

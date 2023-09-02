@@ -5,12 +5,14 @@ import { LinearGradient } from '@tamagui/linear-gradient'
 
 interface CustomSelectProps extends SelectProps {
   items: string[]
+  width?: number
+  w?: number
 }
 
-export default function CustomSelect(props: CustomSelectProps) {
+export function CustomSelect(props: CustomSelectProps) {
   return (
     <Select id='tint' value={props.value} onValueChange={props.onValueChange} {...props}>
-      <Select.Trigger width={220} iconAfter={ChevronDown}>
+      <Select.Trigger w={props.width || props.w || '100%'} iconAfter={ChevronDown}>
         <Select.Value />
       </Select.Trigger>
       <Adapt when='sm' platform='touch'>
@@ -31,7 +33,7 @@ export default function CustomSelect(props: CustomSelectProps) {
             </Sheet.ScrollView>
           </Sheet.Frame>
 
-          <Sheet.Overlay animation='lazy' enterStyle={{ opacity: 0 }} exitStyle={{ opacity: 0 }} />
+          <Sheet.Overlay animation='fast' enterStyle={{ opacity: 0 }} exitStyle={{ opacity: 0 }} />
         </Sheet>
       </Adapt>
       <Select.Content zIndex={200000}>

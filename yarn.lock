@@ -4148,6 +4148,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@tamagui/animations-css@npm:^1.58.0":
+  version: 1.58.0
+  resolution: "@tamagui/animations-css@npm:1.58.0"
+  dependencies:
+    "@tamagui/cubic-bezier-animator": 1.58.0
+    "@tamagui/use-presence": 1.58.0
+    "@tamagui/web": 1.58.0
+  checksum: 8f0fa17240f63b23cc9814f6b54e7d5fafcebaabcde4117ed82c4fab742facbf805164285c5f35a9d84cedf478034d6c72a4dc10af8ede4921d9c62b5bf59cfa
+  languageName: node
+  linkType: hard
+
 "@tamagui/animations-react-native@npm:1.55.2, @tamagui/animations-react-native@npm:latest":
   version: 1.55.2
   resolution: "@tamagui/animations-react-native@npm:1.55.2"
@@ -4326,6 +4337,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@tamagui/compose-refs@npm:1.58.0":
+  version: 1.58.0
+  resolution: "@tamagui/compose-refs@npm:1.58.0"
+  peerDependencies:
+    react: "*"
+  checksum: 4f831dededb8ced08ab0b010422328635e3d297d9b59e95fad0bec3e3ca8ee31d4430b3204c6bff77b8ad6459ebd915105420be3cf160537bc773b5c1837589f
+  languageName: node
+  linkType: hard
+
 "@tamagui/config-default-node@npm:1.55.2":
   version: 1.55.2
   resolution: "@tamagui/config-default-node@npm:1.55.2"
@@ -4342,6 +4362,15 @@ __metadata:
   peerDependencies:
     react: "*"
   checksum: 3acc67abf717c6b29fd7d219fbb51680fe94c79e64a4c15ace722b5b6f570b0db652302b7a0f6a4bc9dac0550cb9ed5338c3c7498bc3f1b1dee81214651b4368
+  languageName: node
+  linkType: hard
+
+"@tamagui/constants@npm:1.58.0":
+  version: 1.58.0
+  resolution: "@tamagui/constants@npm:1.58.0"
+  peerDependencies:
+    react: "*"
+  checksum: 8eb0a578543af5bb991383505345d7ff3607dc66ebe5298ef1e1889b2ddebd98f3fd604928d4bdf2d9f1dd624873bef1317c54ddfffc0725232f6050bbcac009
   languageName: node
   linkType: hard
 
@@ -4385,6 +4414,13 @@ __metadata:
   dependencies:
     "@tamagui/web": 1.55.2
   checksum: b7c8ad6e66ab79ab128933f3d68a9321094e24ac8dc038af28abe6124dd1157b2350dc9ff5b31dcb2b1f1c0a004687f25c8d4534d27a9158583f2fbd9f3e01e3
+  languageName: node
+  linkType: hard
+
+"@tamagui/cubic-bezier-animator@npm:1.58.0":
+  version: 1.58.0
+  resolution: "@tamagui/cubic-bezier-animator@npm:1.58.0"
+  checksum: 68773d0b7b0cc7d8c44b25b8a549cd88e1c1458b77d8efc4550e79a8fe36668102cda5eef2de86fd7ab8577843e0e48a8204a9d108970e878ef34230c6b1cc68
   languageName: node
   linkType: hard
 
@@ -4616,6 +4652,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@tamagui/helpers@npm:1.58.0":
+  version: 1.58.0
+  resolution: "@tamagui/helpers@npm:1.58.0"
+  dependencies:
+    "@tamagui/constants": 1.58.0
+    "@tamagui/simple-hash": 1.58.0
+  checksum: cac2ad9fdf6b15f69014e2c1418af3370fd9bc64361950b56395cb8343542f9b0afae683780455b0e5c2f4251b568c160565eef5b8cc606d42ffafd593d4716d
+  languageName: node
+  linkType: hard
+
 "@tamagui/image@npm:1.55.2":
   version: 1.55.2
   resolution: "@tamagui/image@npm:1.55.2"
@@ -4728,6 +4774,15 @@ __metadata:
   dependencies:
     "@react-native/normalize-color": ^2.1.0
   checksum: 54e17163b54139e64dd17aab0083753e5c2b7db740a7fe06004a608ae4540bf68cb29d91065c31be4f8a8450cc3ee9f8d4200d18eb02f6d13926aaa05cfcefed
+  languageName: node
+  linkType: hard
+
+"@tamagui/normalize-css-color@npm:1.58.0":
+  version: 1.58.0
+  resolution: "@tamagui/normalize-css-color@npm:1.58.0"
+  dependencies:
+    "@react-native/normalize-color": ^2.1.0
+  checksum: 2e3b005a68c9671b226b4497937a4a9906e3659adb744c462f943bf988bec00be9bb5715f15e235605f1eacad32fa39a10cc09bc75a1a0d99a3973d49c5be9c0
   languageName: node
   linkType: hard
 
@@ -5008,6 +5063,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@tamagui/simple-hash@npm:1.58.0":
+  version: 1.58.0
+  resolution: "@tamagui/simple-hash@npm:1.58.0"
+  checksum: 1271b721081501394e9b9fb3ce5923202bf2c278f2a9d137a21c82a9145f6b70b7da52ba41d1ece97e7816d836671603e3037cec585ab34e66aba9b302e93ae4
+  languageName: node
+  linkType: hard
+
 "@tamagui/slider@npm:1.55.2":
   version: 1.55.2
   resolution: "@tamagui/slider@npm:1.55.2"
@@ -5158,6 +5220,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@tamagui/timer@npm:1.58.0":
+  version: 1.58.0
+  resolution: "@tamagui/timer@npm:1.58.0"
+  checksum: c2cbd564ae1e74c6da82d48393862a2a584e6f552def860aad5afe21cac474a674dee1fc64e96a6708e0a686b2951013335e1038bb027d2836dc1099d0e42619
+  languageName: node
+  linkType: hard
+
 "@tamagui/toast@npm:latest":
   version: 1.55.2
   resolution: "@tamagui/toast@npm:1.55.2"
@@ -5279,6 +5348,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@tamagui/use-did-finish-ssr@npm:1.58.0":
+  version: 1.58.0
+  resolution: "@tamagui/use-did-finish-ssr@npm:1.58.0"
+  dependencies:
+    "@tamagui/constants": 1.58.0
+  peerDependencies:
+    react: "*"
+  checksum: 15e869abec5c30f0246ad24bf7fb853b179c1071e414714d3939c5a42c8786c2c43e5e95fce52c69895a83a95570b22a0a00623e44171a0263d799e9dc8d6d7e
+  languageName: node
+  linkType: hard
+
 "@tamagui/use-direction@npm:1.55.2":
   version: 1.55.2
   resolution: "@tamagui/use-direction@npm:1.55.2"
@@ -5315,6 +5395,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@tamagui/use-force-update@npm:1.58.0":
+  version: 1.58.0
+  resolution: "@tamagui/use-force-update@npm:1.58.0"
+  peerDependencies:
+    react: "*"
+  checksum: 9ab57678e7d489d92bfe49cab7d01e6c0e75a8eb83a3a289378a821035afdbf7c82372ddb0e540047250bdaa59e4814cdc3c27d410c94c35344834eff63221c8
+  languageName: node
+  linkType: hard
+
 "@tamagui/use-keyboard-visible@npm:1.55.2":
   version: 1.55.2
   resolution: "@tamagui/use-keyboard-visible@npm:1.55.2"
@@ -5333,6 +5422,17 @@ __metadata:
   peerDependencies:
     react: "*"
   checksum: 031e697eeda4c3ae60d26b8a71042c0e644c8c67612cb36d554d7cda2086abaef1ea308acff3d13d11f6de21c9a2c324380049d188e33ccb72abccbe65bd7f8e
+  languageName: node
+  linkType: hard
+
+"@tamagui/use-presence@npm:1.58.0":
+  version: 1.58.0
+  resolution: "@tamagui/use-presence@npm:1.58.0"
+  dependencies:
+    "@tamagui/web": 1.58.0
+  peerDependencies:
+    react: "*"
+  checksum: b566e194f6447013ffc725afa02fccd36641106b9048fd7995616fb8b1f142ea8fbbeb0d092a223249962cb63abf9e61ab75b89178ba2f44ef495450c6f8e39c
   languageName: node
   linkType: hard
 
@@ -5381,6 +5481,23 @@ __metadata:
   peerDependencies:
     react: "*"
   checksum: ff333d7f8fcc178a13aa564418e8f81f652c25dc9e4f1a8b6346d34aa04c5cbff0bff7937e003a723657f4d88aca0c369f3e6c44e440cad5780842d93ed94f91
+  languageName: node
+  linkType: hard
+
+"@tamagui/web@npm:1.58.0":
+  version: 1.58.0
+  resolution: "@tamagui/web@npm:1.58.0"
+  dependencies:
+    "@tamagui/compose-refs": 1.58.0
+    "@tamagui/constants": 1.58.0
+    "@tamagui/helpers": 1.58.0
+    "@tamagui/normalize-css-color": 1.58.0
+    "@tamagui/timer": 1.58.0
+    "@tamagui/use-did-finish-ssr": 1.58.0
+    "@tamagui/use-force-update": 1.58.0
+  peerDependencies:
+    react: "*"
+  checksum: a434346a78d765ac3bc3d0c2ca06abfdcaafe4f200439e975548adbb3475084aba5813405a2cea5256af0097777a637be06fd2dc725ea92552158fc724b4aafe
   languageName: node
   linkType: hard
 
@@ -14732,6 +14849,7 @@ __metadata:
     "@babel/runtime": ^7.18.9
     "@manypkg/cli": ^0.19.1
     "@nderscore/tamagui-typescript-plugin": ^0.5.3
+    "@tamagui/animations-css": ^1.58.0
     check-dependency-version-consistency: ^3.0.3
     eslint: ^8.21.0
     node-gyp: ^9.3.1
