@@ -73,6 +73,24 @@ You might be thinking: why convert sizes from pixels, which are numbers, to toke
 1. The main reason.. If you made all of your buttons, inputs, and select components use the same height in pixels, and later decided to change them, you'd have to go through and change each individually. Using this method instead, you just update your tokens.
 2. Probably less of a motivator, but I find remembering the exact pixel values I use for everything a bit difficult. But remembering that I always use token size 8 for this and size 6 for that is not so hard.
 
+## Challenges
+I'd love to convert these brief "go figure it out" challenges into a more helpful guided tutorial on each when I have some more time. But for now, here are a few things you can do, starting with this repo as a base, to get familiar with Tamagui and Solito. These are roughly ordered by increasing complexity.
+
+### Tamagui
+1. Adjust the home screen's background color using inline styling with Tamagui shorthands.
+2. Make your own Styled() version of the Tamagui button and add it to the @my/ui design system package. Use that button somewhere in the app.
+3. Adjust size tokens so that H3 text is a bit smaller
+4. Replace the typeface used throughout the app.
+5. Add an additional color palette of your choosing to the list of available color themes.
+6. Add a new subtheme called alt3 that strengthens an existing theme.
+7. Adjust the app's breakpoints using media queries so that the design looks great on every device.
+
+### Solito
+1. Add a new page that you can navigate to via a link
+2. Add a tab navigator for mobile.
+3. Add nested stack -> tab -> stack navigators for mobile.
+4. Ensure that the app still renders correctly on both web and mobile (i.e. mobile should have stack/tab navigators, but web should look like a flat website, not a mobile app).
+
 ## Feedback
 Anything unclear to you, or that you think could be better? Feel free to submit an issue or PR! I'd love your feedback.
 
