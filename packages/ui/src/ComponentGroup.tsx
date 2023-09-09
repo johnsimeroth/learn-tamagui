@@ -10,7 +10,7 @@ import {
   Progress,
   Switch,
   Theme,
-  AnimationKeys
+  AnimationKeys,
 } from 'tamagui'
 import React, { useState } from 'react'
 
@@ -42,7 +42,7 @@ const fruits = [
   'Durian',
 ]
 
-export function ComponentGroup({ id = 0, filled = false}) {
+export function ComponentGroup({ id = 0, filled = false }) {
   const [selectValue, setSelectValue] = useState('apple')
 
   return (
@@ -54,11 +54,9 @@ export function ComponentGroup({ id = 0, filled = false}) {
       br='$8'
       p='$5'
       bs='dashed'
-      bg={ filled ? '$background' : 'none' }
-      // scale={0.9}
-      animation={'slow'}
+      bg={filled ? '$background' : 'none'}
+      animation={'medium'}
       hoverStyle={{ scale: 0.925 }}
-      pressStyle={{ scale: 0.875 }}
     >
       <CustomSelect value={selectValue} onValueChange={setSelectValue} items={fruits} />
       <Input placeholder='Type something' w='100%' />
@@ -71,9 +69,19 @@ export function ComponentGroup({ id = 0, filled = false}) {
       </Progress>
       <CustomSlider />
       <Switch>
-        <Switch.Thumb id={id.toString()} animation='medium' />
+        <Switch.Thumb id={id.toString()} animation='fast' />
       </Switch>
-      <Card w='100%' elevation='$1' space='$2' p='$2.5' boc='$borderColor' bw='$0.5' >
+      <Card
+        w='100%'
+        elevation='$1'
+        space='$2'
+        p='$2.5'
+        boc='$borderColor'
+        bw='$0.5'
+        animation={'medium'}
+        hoverStyle={{ scale: 1.1 }}
+        pressStyle={{ scale: 1 }}
+      >
         <XStack jc='space-between' ai='center'>
           <Avatar circular size='$6'>
             <Avatar.Image src='http://placekitten.com/200/300' />
