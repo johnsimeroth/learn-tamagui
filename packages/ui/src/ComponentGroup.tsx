@@ -9,11 +9,10 @@ import {
   XGroup,
   Progress,
   Switch,
-  Theme,
-  AnimationKeys,
 } from 'tamagui'
-import React, { useState } from 'react'
+import { useState } from 'react'
 
+// TODO: confirm if these are being optimized by tamagui compiler
 import { CustomSelect } from './CustomSelect'
 import { CustomSlider } from './CustomSlider'
 
@@ -42,7 +41,7 @@ const fruits = [
   'Durian',
 ]
 
-export function ComponentGroup({ id = 0, filled = false }) {
+export function ComponentGroup({ filled = false }) {
   const [selectValue, setSelectValue] = useState('apple')
 
   return (
@@ -69,7 +68,7 @@ export function ComponentGroup({ id = 0, filled = false }) {
       </Progress>
       <CustomSlider />
       <Switch>
-        <Switch.Thumb id={id.toString()} animation='fast' />
+        <Switch.Thumb animation='fast' />
       </Switch>
       <Card
         w='100%'

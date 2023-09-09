@@ -5,6 +5,7 @@ import {
   Theme,
   H1,
   H2,
+  H3,
   Paragraph,
   Card,
   useThemeName,
@@ -40,20 +41,23 @@ function ColorModePreview({ id }) {
         <Paragraph>
           This page is a preview of how some of the basic Tamagui UI kit components look with
           various themes applied. Try adjusting tint in both light and dark mode. This page is also
-          fully compatible with native platforms.
+          fully compatible with native platforms. Scroll down to see alternative sub-themes.
         </Paragraph>
-        <XStack f={1} w='100%' space='$6' jc='space-between' pt='$6'>
+        <H3 w='100%' ta='center'>Base Theme</H3>
+        <XStack f={1} w='100%' space='$6' jc='space-between' pb='$6'>
           <ComponentGroup id={id} filled />
           <ComponentGroup id={id + 1} />
         </XStack>
         <Theme name='alt1'>
-          <XStack f={1} w='100%' space='$6' jc='space-between' pt='$6'>
+          <H3 w='100%' ta='center'>Alt 1 Subtheme</H3>
+          <XStack f={1} w='100%' space='$6' jc='space-between' pb='$6'>
             <ComponentGroup id={id + 2} filled />
             <ComponentGroup id={id + 3} />
           </XStack>
         </Theme>
         <Theme name='alt2'>
-          <XStack f={1} w='100%' space='$6' jc='space-between' pt='$6'>
+          <H3 w='100%' ta='center'>Alt 2 Subtheme</H3>
+          <XStack f={1} w='100%' space='$6' jc='space-between' pb='$6'>
             <ComponentGroup id={id + 4} filled />
             <ComponentGroup id={id + 5} />
           </XStack>
