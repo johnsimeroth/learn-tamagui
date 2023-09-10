@@ -54,8 +54,8 @@ export function ComponentGroup({ filled = false }) {
       p='$5'
       bs='dashed'
       bg={filled ? '$background' : 'none'}
-      animation={'medium'}
-      hoverStyle={{ scale: 0.925 }}
+      // animation={'medium'}
+      // hoverStyle={{ scale: 0.925 }}
     >
       <CustomSelect value={selectValue} onValueChange={setSelectValue} items={fruits} />
       <Input placeholder='Type something' w='100%' />
@@ -63,7 +63,7 @@ export function ComponentGroup({ filled = false }) {
         <Button w='50%'>Button 1</Button>
         <Button w='50%'>Button 2</Button>
       </XGroup>
-      <Progress w='100%' value={73} minWidth='0'>
+      <Progress w='100%' value={73} minWidth='$0'>
         <Progress.Indicator />
       </Progress>
       <CustomSlider />
@@ -83,7 +83,7 @@ export function ComponentGroup({ filled = false }) {
       >
         <XStack jc='space-between' ai='center'>
           <Avatar circular size='$6'>
-            <Avatar.Image src='http://placekitten.com/200/300' />
+            <Avatar.Image src='https://placekitten.com/200/300' />
             <Avatar.Fallback bc='white' delayMs={800} />
           </Avatar>
           <Paragraph ta='left'>This is a card.</Paragraph>
