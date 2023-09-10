@@ -1,11 +1,11 @@
 import { ComponentGroup } from './ComponentGroup'
-import { ResponsiveXStack } from './ResponsiveXStack'
+import { ResponsiveStack } from './ResponsiveStack'
 
 export function ComponentGroupStack() {
-return (
-  <ResponsiveXStack>
-    <ComponentGroup filled />
-    <ComponentGroup />
-  </ResponsiveXStack>
+  return (
+    <ResponsiveStack jc='space-between'>
+      <ComponentGroup filled />
+      <ComponentGroup />
+    </ResponsiveStack>
   )
 }

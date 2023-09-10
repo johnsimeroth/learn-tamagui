@@ -54,8 +54,6 @@ export function ComponentGroup({ filled = false }) {
       p='$5'
       bs='dashed'
       bg={filled ? '$background' : 'none'}
-      // animation={'medium'}
-      // hoverStyle={{ scale: 0.925 }}
     >
       <CustomSelect value={selectValue} onValueChange={setSelectValue} items={fruits} />
       <Input placeholder='Type something' w='100%' />

@@ -1,13 +1,4 @@
-import {
-  YStack,
-  Theme,
-  H1,
-  H2,
-  Paragraph,
-  Card,
-  useThemeName,
-  ThemeName,
-} from 'tamagui'
+import { YStack, Theme, H1, H2, Paragraph, Card, useThemeName, ThemeName } from 'tamagui'
 import { useState } from 'react'
 
 import { CustomSelect } from './CustomSelect'
@@ -22,7 +13,13 @@ export function ColorModePreview() {
 
   return (
     <Theme name={subTheme as ThemeName}>
-      <YStack f={1} ai='flex-start' space='$2' bg={themeName === 'dark' ? 'black' : 'white'} p='$8'>
+      <YStack
+        f={1}
+        // ai='flex-start'
+        space='$2'
+        bg={themeName === 'dark' ? 'black' : 'white'}
+        p='$8'
+      >
         <YStack ai='center' w='100%'>
           <Card elevation='$1' p='$4.5' w='100%'>
             <H1 textTransform='uppercase' ta='center'>
@@ -44,14 +41,14 @@ export function ColorModePreview() {
           fully compatible with native platforms. Scroll down to see alternative sub-themes.
         </Paragraph>
         <H3Centered>Base Theme</H3Centered>
-        <ComponentGroupStack/>
+        <ComponentGroupStack />
         <Theme name='alt1'>
           <H3Centered>Alt 1 Subtheme</H3Centered>
-          <ComponentGroupStack/>
+          <ComponentGroupStack />
         </Theme>
         <Theme name='alt2'>
           <H3Centered>Alt 2 Subtheme</H3Centered>
-          <ComponentGroupStack/>
+          <ComponentGroupStack />
         </Theme>
       </YStack>
     </Theme>

@@ -3,19 +3,20 @@ import {
   XStack,
   Theme,
   ColorModePreview,
+  ResponsiveStack,
 } from '@my/ui'
 
 export function HomeScreen() {
   return (
     <ScrollView>
-      <XStack flex={1}>
+      <ResponsiveStack flex={1}>
         <Theme name='light'>
           <ColorModePreview />
         </Theme>
         <Theme name='dark'>
           <ColorModePreview />
         </Theme>
-      </XStack>
+      </ResponsiveStack>
     </ScrollView>
   )
 }
