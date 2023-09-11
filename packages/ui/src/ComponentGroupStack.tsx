@@ -5,7 +5,6 @@ export function ComponentGroupStack() {
   return (
     <XStack
       jc='space-around'
-      alignContent='center'
       flexWrap='wrap'
     >
       <ComponentGroup filled />
