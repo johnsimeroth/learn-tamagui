@@ -1,11 +1,15 @@
+import { XStack } from 'tamagui'
 import { ComponentGroup } from './ComponentGroup'
-import { ResponsiveStack } from './ResponsiveStack'
 
 export function ComponentGroupStack() {
   return (
-    <ResponsiveStack jc='space-between'>
+    <XStack
+      jc='space-around'
+      alignContent='center'
+      flexWrap='wrap'
+    >
       <ComponentGroup filled />
       <ComponentGroup />
-    </ResponsiveStack>
+    </XStack>
   )
 }

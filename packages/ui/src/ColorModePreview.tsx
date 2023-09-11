@@ -14,8 +14,9 @@ export function ColorModePreview() {
   return (
     <Theme name={subTheme as ThemeName}>
       <YStack
-        f={1}
-        // ai='flex-start'
+        flexGrow={1}
+        flexShrink={1}
+        flexBasis={320}
         space='$2'
         bg={themeName === 'dark' ? 'black' : 'white'}
         p='$8'
@@ -36,9 +37,7 @@ export function ColorModePreview() {
           items={subThemeOptions}
         />
         <Paragraph>
-          This page is a preview of how some of the basic Tamagui UI kit components look with
-          various themes applied. Try adjusting tint in both light and dark mode. This page is also
-          fully compatible with native platforms. Scroll down to see alternative sub-themes.
+          This page is a preview of how some of the basic Tamagui UI kit components look with various themes applied. Try adjusting tint in both light and dark mode. This page is also fully compatible with native platforms. Scroll down to see alternative sub-themes.
         </Paragraph>
         <H3Centered>Base Theme</H3Centered>
         <ComponentGroupStack />
