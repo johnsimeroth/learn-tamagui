@@ -19,7 +19,7 @@ export function ColorModePreview() {
         flexBasis={320}
         space='$2'
         bg={themeName === 'dark' ? 'black' : 'white'}
-        p='$8'
+        p='2.5%'
       >
         <YStack ai='center' w='100%'>
           <Card elevation='$1' p='$4.5' w='100%'>
