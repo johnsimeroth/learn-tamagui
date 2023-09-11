@@ -1,4 +1,4 @@
-import { YStack, Theme, H1, H2, Paragraph, Card, useThemeName, ThemeName } from 'tamagui'
+import { YStack, Theme, H1, H2, Paragraph, Card, useThemeName, ThemeName, SizableText, Text} from 'tamagui'
 import { useState } from 'react'
 
 import { CustomSelect } from './CustomSelect'
@@ -37,7 +37,13 @@ export function ColorModePreview() {
           items={subThemeOptions}
         />
         <Paragraph>
-          This page is a preview of how some of the basic Tamagui UI kit components look with various themes applied. Try adjusting tint in both light and dark mode. This page is also fully compatible with native platforms. Scroll down to see alternative sub-themes.
+          Just looking for an example of how some of the common components look in different themes? You've come to the right place. Try adjusting tint in both light and dark mode. Scroll down to see alternative sub-themes. If you're on web, try resizing your browser window to see how the layout adapts to different screen sizes. You can also visit this site or download the app on your mobile device.
+        </Paragraph>
+        <Paragraph fontWeight={400} fontStyle='italic'>
+          Seems like a weird use-case for a mobile app, Johnathan, why did you make one?
+        </Paragraph>
+        <Paragraph>
+          Well... because Tamagui/Solito make it so easy to do so!
         </Paragraph>
         <H3Centered>Base Theme</H3Centered>
         <ComponentGroupStack />
