@@ -10,7 +10,7 @@ export function HomeScreen() {
     <ScrollView>
       <XStack
         display='flex'
-        flex={1}
+        f={1}
         flexWrap='wrap'
       >
         <Theme name='light'>

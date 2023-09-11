@@ -52,6 +52,7 @@ export function ComponentGroup({ filled = false }) {
       bw='$1'
       br='$8'
       p='$5'
+      m='1.5%'
       bs='dashed'
       bg={filled ? '$background' : 'none'}
     >
@@ -84,7 +85,7 @@ export function ComponentGroup({ filled = false }) {
             <Avatar.Image src='https://placekitten.com/200/300' />
             <Avatar.Fallback bc='white' delayMs={800} />
           </Avatar>
-          <Paragraph ta='left'>This is a card.</Paragraph>
+          <Paragraph pl='$2' ta='left' w='$12'>Click this card. Here is some more text.</Paragraph>
         </XStack>
       </Card>
     </YStack>

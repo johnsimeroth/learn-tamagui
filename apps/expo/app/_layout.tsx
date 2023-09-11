@@ -7,7 +7,11 @@ import { useColorScheme } from 'react-native'
 export default function HomeLayout() {
   const [loaded] = useFonts({
     Inter: require('@tamagui/font-inter/otf/Inter-Medium.otf'),
+    InterItalic: require('@tamagui/font-inter/otf/Inter-Italic.otf'),
     InterBold: require('@tamagui/font-inter/otf/Inter-Bold.otf'),
+    InterBlack: require('@tamagui/font-inter/otf/Inter-Black.otf'),
+    // InterExtraBold: require('@tamagui/font-inter/otf/Inter-ExtraBold.otf'),
+    // InterLight: require('@tamagui/font-inter/otf/Inter-Light.otf'),
   })
   const scheme = useColorScheme()
 
