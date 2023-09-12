@@ -39,7 +39,7 @@ export function ColorModePreview() {
         <Paragraph>
           Just looking for an example of how some of the common components look in different themes? You've come to the right place. Try adjusting tint in both light and dark mode. Scroll down to see alternative sub-themes. If you're on web, try resizing your browser window to see how the layout adapts to different screen sizes. You can also visit this site or download the app on your mobile device.
         </Paragraph>
-        <Paragraph fontWeight={400} fontStyle='italic'>
+        <Paragraph fontWeight='400' fontStyle='italic'>
           Seems like a weird use-case for a mobile app, Johnathan, why did you make one?
         </Paragraph>
         <Paragraph>
