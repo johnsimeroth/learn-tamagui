@@ -5,9 +5,9 @@ import { MyLink as Link } from './MyLink'
 
 export function MyHeader() {
   return (
-    <XStack jc='space-between' paddingVertical='$3' paddingHorizontal='$5'>
-      <LinkStack><Menu /></LinkStack>
-      <XStack space='$3'>
+    <XStack tag='header' jc='space-between' paddingVertical='$3' paddingHorizontal='$5'>
+      <LinkStack tag='button'><Menu /></LinkStack>
+      <XStack tag='nav' space='$3'>
         <Link href='https://github.com/johnsimeroth/learn-tamagui'>
           <SizableText>GitHub</SizableText>
         </Link>

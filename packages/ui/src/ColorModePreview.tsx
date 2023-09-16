@@ -14,6 +14,7 @@ export function ColorModePreview() {
   return (
     <Theme name={subTheme as ThemeName}>
       <YStack
+        tag='section'
         flexGrow={1}
         flexShrink={1}
         flexBasis={320}
