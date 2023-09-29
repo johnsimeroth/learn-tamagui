@@ -52,6 +52,13 @@ const bodyFont = createInterFont(
   }
 )
 
+const xs = 660;
+const sm = 800;
+const md = 1020;
+const lg = 1280;
+const xl = 1420;
+const xxl = 1600;
+
 export const config = createTamagui({
   defaultFont: 'body',
   animations,
@@ -65,16 +72,17 @@ export const config = createTamagui({
   themes,
   tokens,
   media: createMedia({
-    xs: { maxWidth: 660 },
-    sm: { maxWidth: 800 },
-    md: { maxWidth: 1020 },
-    lg: { maxWidth: 1280 },
-    xl: { maxWidth: 1420 },
-    xxl: { maxWidth: 1600 },
-    gtXs: { minWidth: 660 + 1 },
-    gtSm: { minWidth: 800 + 1 },
-    gtMd: { minWidth: 1020 + 1 },
-    gtLg: { minWidth: 1280 + 1 },
+    xs: { maxWidth: xs },
+    sm: { maxWidth: sm },
+    md: { maxWidth: md },
+    lg: { maxWidth: lg },
+    xl: { maxWidth: xl },
+    xxl: { maxWidth: xxl },
+    gtXs: { minWidth: xs + 1 },
+    gtSm: { minWidth: sm + 1 },
+    gtMd: { minWidth: md + 1 },
+    gtLg: { minWidth: lg + 1 },
+    gtXl: { minWidth: xl + 1 },
     short: { maxHeight: 820 },
     tall: { minHeight: 820 },
     hoverNone: { hover: 'none' },

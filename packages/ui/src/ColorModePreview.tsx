@@ -19,7 +19,7 @@ export function ColorModePreview() {
         flexShrink={1}
         flexBasis={320}
         space='$2'
-        bg={themeName === 'dark' ? 'black' : 'white'}
+        bg='$backgroundStrong'
         p='2.5%'
       >
         <YStack ai='center' w='100%'>
