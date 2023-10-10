@@ -1,7 +1,7 @@
 import { ScrollView, XStack, YStack, Theme, ColorModePreview, MyHeader, NavMenu } from '@my/ui'
 import { useState } from 'react'
 
-type Visible = boolean | null
+type Visible = boolean;
 
 export function HomeScreen() {
   const [isVisible, setIsVisible] = useState<Visible>(false)
