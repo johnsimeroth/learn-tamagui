@@ -10,7 +10,7 @@ const linkList = [
 
 const drawerWidth = '$18';
 
-export function NavMenu({ isVisible } : { isVisible: boolean }) {
+export function NavMenu({ isVisible } : { isVisible: boolean | null }) {
   const media = useMedia()
   return media.gtLg ? (
     <StackDrawer isVisible={isVisible} linkList={linkList} />
@@ -19,7 +19,7 @@ export function NavMenu({ isVisible } : { isVisible: boolean }) {
   )
 }
 
-export function StackDrawer({ isVisible, linkList }: { isVisible: boolean, linkList: JSX.Element[] }) {
+export function StackDrawer({ isVisible, linkList }: { isVisible: boolean | null, linkList: JSX.Element[] }) {
   return (
     <YStack
       display={isVisible ? 'flex' : 'none'}
@@ -31,7 +31,7 @@ export function StackDrawer({ isVisible, linkList }: { isVisible: boolean, linkL
   )
 }
 
-export function SheetDrawer({ isVisible, linkList }: { isVisible: boolean, linkList: JSX.Element[] }) {
+export function SheetDrawer({ isVisible, linkList }: { isVisible: boolean | null, linkList: JSX.Element[] }) {
   return (
     <ZStack display={isVisible ? 'block' : 'none'} fullscreen zi='$2'>
       <XStack fullscreen o={0.8} bg='$backgroundStrong'></XStack>
