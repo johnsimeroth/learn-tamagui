@@ -1,26 +1,14 @@
-import {
-  ScrollView,
-  XStack,
-  YStack,
-  Theme,
-  ColorModePreview,
-  MyHeader,
-  NavMenu,
-  // useMedia,
-} from '@my/ui'
-import {
-  useState,
-  // useEffect
-} from 'react'
+import { ScrollView, XStack, YStack, Theme, ColorModePreview, MyHeader, NavMenu } from '@my/ui'
+import { useState } from 'react'
 
-type Visible = boolean | null;
+type Visible = boolean | null
 
 export function HomeScreen() {
-  const [isVisible, setIsVisible]  = useState<Visible>(false);
-
+  const [isVisible, setIsVisible] = useState<Visible>(false)
   /*
   turn this on to make the menu visibility default size dependent.
-  also need to replace useState(false) with useState(null)
+  also need to replace useState(false) with useState(null).
+  causes layout shift on initial load.
 
   const media = useMedia();
 
@@ -36,9 +24,9 @@ export function HomeScreen() {
 
   return (
     <YStack display='flex' f={1}>
-      <MyHeader handlePress={handlePress}/>
+      <MyHeader handlePress={handlePress} />
       <XStack>
-        <NavMenu isVisible={isVisible === null ? false : isVisible}/>
+        <NavMenu isVisible={isVisible} />
         <ScrollView tag='main'>
           <XStack display='flex' f={1} flexWrap='wrap'>
             <Theme name='light'>
