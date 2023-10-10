@@ -2,13 +2,12 @@ import { YStack, XStack, ZStack, useMedia } from 'tamagui';
 import { NavLink } from './NavLink';
 
 const linkList = [
-  <NavLink href='/settings' linkText='Settings' key={0}/>,
-  <NavLink href='/lesson/0' linkText='Lesson 0: setup' key={1}/>,
-  <NavLink href='/' linkText='Home' key={2}/>,
-  <NavLink href='/' linkText='Home' key={3}/>,
+  <NavLink href='/lesson/0' linkText='Lesson 0: Setup, Folder Structure, and Resources' key={0}/>,
+  <NavLink href='/lesson/1' linkText='Lesson 1: Inline Styling, Shorthands, and Tokens' key={1}/>,
+  <NavLink href='/lesson/2' linkText='Lesson 2: Using styled()' key={2}/>,
 ];
 
-const drawerWidth = '$18';
+const drawerWidth = '$20';
 
 export function NavMenu({ isVisible } : { isVisible: boolean }) {
   const media = useMedia()
