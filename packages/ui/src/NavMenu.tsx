@@ -2,8 +2,8 @@ import { YStack, XStack, ZStack, useMedia } from 'tamagui';
 import { NavLink } from './NavLink';
 
 const linkList = [
-  <NavLink href='./lessons' linkText='Lesson 0: setup' key={0}/>,
-  <NavLink href='/' linkText='Home' key={1}/>,
+  <NavLink href='/settings' linkText='Settings' key={0}/>,
+  <NavLink href='/lesson/0' linkText='Lesson 0: setup' key={1}/>,
   <NavLink href='/' linkText='Home' key={2}/>,
   <NavLink href='/' linkText='Home' key={3}/>,
 ];
