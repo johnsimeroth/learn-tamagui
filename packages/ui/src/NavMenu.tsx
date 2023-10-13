@@ -2,9 +2,10 @@ import { YStack, XStack, ZStack, useMedia } from 'tamagui';
 import { NavLink } from './NavLink';
 
 const linkList = [
-  <NavLink href='/lesson/0' linkText='Lesson 0: Setup, Folder Structure, and Resources' key={0}/>,
-  <NavLink href='/lesson/1' linkText='Lesson 1: Inline Styling, Shorthands, and Tokens' key={1}/>,
-  <NavLink href='/lesson/2' linkText='Lesson 2: Using styled()' key={2}/>,
+  <NavLink href='/' linkText='Home' key={0}/>,
+  <NavLink href='/lesson/0' linkText='Lesson 0: Setup, Folder Structure, and Resources' key={1}/>,
+  <NavLink href='/lesson/1' linkText='Lesson 1: Inline Styling, Shorthands, and Tokens' key={2}/>,
+  <NavLink href='/lesson/2' linkText='Lesson 2: Using styled()' key={3}/>,
 ];
 
 const drawerWidth = '$20';
