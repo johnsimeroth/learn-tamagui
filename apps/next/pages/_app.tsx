@@ -10,6 +10,8 @@ import Head from 'next/head'
 import React from 'react'
 import type { SolitoAppProps } from 'solito'
 
+import { Layout } from '@my/ui'
+
 if (process.env.NODE_ENV === 'production') {
   require('../public/tamagui.css')
 }
@@ -18,12 +20,14 @@ function MyApp({ Component, pageProps }: SolitoAppProps) {
   return (
     <>
       <Head>
-        <title>Tamagui Example App</title>
-        <meta name="description" content="Tamagui, Solito, Expo & Next.js" />
+        <title>Learn Tamagui</title>
+        <meta name="description" content="Learn how to build a universal app" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <ThemeProvider>
-        <Component {...pageProps} />
+        <Layout>
+          <Component {...pageProps} />
+        </Layout>
       </ThemeProvider>
     </>
   )
