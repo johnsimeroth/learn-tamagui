@@ -1,24 +1,7 @@
-import { ScrollView, XStack, YStack, H1, MyHeader, NavMenu } from '@my/ui'
-import { useState } from 'react'
-
-type Visible = boolean;
-
+import { H1 } from '@my/ui'
+// import { Lesson0MD } from './data/Lesson0MD';
 export function Lesson1() {
-  const [isVisible, setIsVisible] = useState<Visible>(false)
-
-  function handlePress() {
-    setIsVisible(!isVisible)
-  }
-
   return (
-    <YStack display='flex' f={1}>
-      <MyHeader handlePress={handlePress} />
-      <XStack>
-        <NavMenu isVisible={isVisible} />
-        <ScrollView tag='main'>
-          <H1>Lesson 1!</H1>
-        </ScrollView>
-      </XStack>
-    </YStack>
+  <H1>Lesson 1!</H1>
   )
 }
