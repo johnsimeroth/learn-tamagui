@@ -31,11 +31,24 @@ Both of these commands result in dev builds that are faster to build and enable 
 Now that you've got a working project, let's take a look at the repo structure.
 
 ## Folder Layout
-At the top level, you've got several folders and a little under a billion config files (hooray, we love javascript!). I want you to focus on just two folders at this level for now: `packages/` and `apps/`. The `packages` folder is where everything that's shared between components goes
+At the top level, you've got several folders and a little under a billion config files (hooray, we love javascript!). I want you to focus on just two folders at this level for now: `packages/` and `apps/`. The `packages` folder is for code that's shared between both web and native, while the `apps/` folder is for platform specific code.
+
+### packages/
+You'll spend most of your time in the pacakges directory. Inside packages you have `packages/app` and `packages/ui`. `packages/app` should contain all of your app's business logic, organized by feature. `packages/ui`, on the other hand, is where very low-level/basic reusable UI components go to get optimized by the compiler. If you're unsure where a component should go, the rule of thumb is: if you're using `styled()`, it goes in `packages/ui`, if you're not using styled and instead you're making a more complex stateful component (e.g. a home feed, a nav bar, etc) it goes in  `packages/app`. Where would you put it in `packages/app`? Let's cover that when it comes up as we start adding features, so we can keep this high level for now.
+
+### apps/
+The `apps/` directory, as mentioned above, is for platform specific code. So if you expand it you'll see an `apps/expo` folder, and an `apps/next` folder. You'll usually only need to interact with these folders for a few reasons. Some (but not all) example reasons are listed below:
+1. Adding navigation between screens in your app, which should always be platform-specific.
+2. Installing native-specific dependencies (which you'll do in the expo folder).
+3. Adjusting platform-specific configuration files (e.g. adding or configuring next plugins).
+There are other cases, but hopefully the pattern is somewhat clear based on these three.
+
+### Don't Sweat
+If you're feeling like you're already swimming in folders and questions, don't worry. We're going take it step by step, and learn as we go.
 
 ## Clean Up
-Let's remove some files and folders that we won't be using. If deleting stuff makes you feel anxious, just make a commit before you proceed so that you can always return to this point and see how the starter repo handles toast or solito slugs.
-
+While we're chatting about folder structure, let's remove some files and folders that we won't be using to help make things a little easier to understand and navigate. If deleting stuff makes you feel anxious, just make a commit before you proceed so that you can always return to this point and see how the starter repo handles toast or solito slugs, for example. For our project, you can safely delete:
+`
 
 
 ```tsx
