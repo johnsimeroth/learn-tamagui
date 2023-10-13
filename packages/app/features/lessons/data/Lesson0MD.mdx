@@ -46,11 +46,25 @@ There are other cases, but hopefully the pattern is somewhat clear based on thes
 ### Don't Sweat
 If you're feeling like you're already swimming in folders and questions, don't worry. We're going take it step by step, and learn as we go.
 
-## Clean Up
-While we're chatting about folder structure, let's remove some files and folders that we won't be using to help make things a little easier to understand and navigate. If deleting stuff makes you feel anxious, just make a commit before you proceed so that you can always return to this point and see how the starter repo handles toast or solito slugs, for example. For our project, you can safely delete:
-`
-
-
-```tsx
-console.log('hello world');
+## Clean Up (optional)
+While we're chatting about folder structure, let's remove some files and folders that we won't be using to help make things a little easier to understand and navigate. You don't have to do this if you don't want to, but it will make your code a lot cleaner and prevent errors related to stuff you're not actually working on. If deleting stuff makes you feel anxious, just make a commit before you proceed so that you can always return to this point and see how the starter repo handles toast or solito slugs, for example. For our project, you can safely delete:
+```bash
+apps/next/app
+apps/next/pages/user
+apps/expo/app/user
+packages/app/features/user
+packages/app/provider/ToastViewport.tsx
+packages/app/provider/ToastViewport.web.tsx
+packages/ui/src/CustomToast.tsx
+packages/ui/src/NativeToast.tsx
+packages/ui/src/MyComponent.tsx
 ```
+Now when you try to run the app, it will fail (because there are references in the code to those files and directories) so use your debugging skills to locate all of those references and remove them. While you're at it, if you're using a syntax highlighting feature that shows when imports go unusued, clear those out too.
+
+Once the app is rendering without errors again, you're ready to proceed!
+
+## Hello World!
+Let's get to the exciting stuff: making changes in code that you can see on screen! Since this is code that we will want to see on both native and web, we're going to navigate to the....
+
+
+...yes, the packages directory. Head to `packages/app/features/home/screen.tsx`.
