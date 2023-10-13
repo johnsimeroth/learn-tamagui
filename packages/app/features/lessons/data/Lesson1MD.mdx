@@ -3,83 +3,182 @@ title: 'Lesson 1'
 description: Inline Styling, Shorthands, and Tokens
 ---
 
-# Lesson 0
+# Lesson 1
 
-You're on lesson 0: setup. By the end of this lesson you should:
-1. Have a working web app that renders hello world,
-2. Understand the high level folder structure of a tamagui/solito/expo monorepo, and
-3. Know where to look for more information and details.
+In lesson 0, you set up the app's monorepo, familiarized yourself with the folder structure, rendered Hello World to the screen, and (optionally) deleted excess code that we won't be using. By the end of this lesson, you should:
 
-## Fine Print
-Before we get to the steps below, some caveats:
-1. This guide assumes you're familiar with Typescript, React, and React Native.
-2. This guide assumes you have node, expo, yarn, git, and possibly other tools that I take for granted already installed.
+1. Understand how to use inline styling to adjust styling in one place for both native and web.
+2. Be able to read and write inline styling in a more compact form, using shorthands.
+3. Understand at a high level what tokens are, why they are important, and how to use them for styling.
 
-## Install
-Alright, let's jump in! Navigate to the folder you want to house your tamagui project in. Then run
-```bash
-npm create tamagui@latest
-```
-Select Next/Expo/Solito for the project template. Follow any other command prompts. This may take a few minutes to run while it sets up a functioning project. Once complete, `cd` into the directory that was created by the install command. e.g. `cd myTamaguiApp`.
+## Inline Styling
+This probably isn't your first rodeo when it comes to inline styling, so I'll keep this short. Inline styling is great because it makes it really clear where your styles are being applied, and removes the need to wire up classnames. However, it's gotten a bad rap in terms of performance, for good reason. Tamagui enables you to write inline styles, without the performance trade offs, because it _*replaces inline styles with pure CSS on web and does something else on native that I will look up later*_.
 
-Run 'yarn' to install dependencies.
-Run `yarn web` and navigate to the localhost port listed in the terminal output to see the project on web.
-Run `yarn native` in *a separate terminal* and follow command line prompts to see the project in expo.
-
-Both of these commands result in dev builds that are faster to build and enable hot reloads, but don't get optimized by the tamagui compiler. We'll get to that later.
-
-Now that you've got a working project, let's take a look at the repo structure.
-
-## Folder Layout
-At the top level, you've got several folders and a little under a billion config files (hooray, we love javascript!). I want you to focus on just two folders at this level for now: `packages/` and `apps/`. The `packages` folder is for code that's shared between both web and native, while the `apps/` folder is for platform specific code.
-
-### packages/
-You'll spend most of your time in the pacakges directory. Inside packages you have `packages/app` and `packages/ui`. `packages/app` should contain all of your app's business logic, organized by feature. `packages/ui`, on the other hand, is where very low-level/basic reusable UI components go to get optimized by the compiler. If you're unsure where a component should go, the rule of thumb is: if you're using `styled()`, it goes in `packages/ui`, if you're not using styled and instead you're making a more complex stateful component (e.g. a home feed, a nav bar, etc) it goes in  `packages/app`. Where would you put it in `packages/app`? Let's cover that when it comes up as we start adding features, so we can keep this high level for now.
-
-### apps/
-The `apps/` directory, as mentioned above, is for platform specific code. So if you expand it you'll see an `apps/expo` folder, and an `apps/next` folder. You'll usually only need to interact with these folders for a few reasons. Some (but not all) example reasons are listed below:
-1. Adding navigation between screens in your app, which should always be platform-specific.
-2. Installing native-specific dependencies (which you'll do in the expo folder).
-3. Adjusting platform-specific configuration files (e.g. adding or configuring next plugins).
-There are other cases, but hopefully the pattern is somewhat clear based on these three.
-
-### Don't Sweat
-If you're feeling like you're already swimming in folders and questions, don't worry. We're going take it step by step, and learn as we go.
-
-## Hello World!
-Let's get to the exciting stuff: making changes in code that you can see on screen! Since this is code that we will want to see on both native and web, we're going to navigate to the....
-
-
-...yes, the packages directory. Head to `packages/app/features/home/screen.tsx`. Replace the entire content of that file with:
+The way you write inline styles with tamagui is very similar to what you may have done with tailwind in the past. You pass style properties as props and set their values as desired. For example, you can add the following to your HomeScreen's XStack component:
 
 ```tsx
-import { XStack, H1 } from '@my/ui'
-
-export function HomeScreen() {
-  return (
-    <XStack display='flex' f={1} flexWrap='wrap'>
+    <XStack borderRadius='30px' display='flex' flex={1} flexWrap='wrap' backgroundColor='#c5c5c5'>
       <H1>Hello World!</H1>
     </XStack>
-  )
-}
 ```
 
-Now refresh your web page and confirm that you're seeing the programmer's greeting. Do the same on your expo app. Once that's working, treat yourself to a git commit and head to the next lesson, or the optional (but highly recommended) cleanup section below!
+You should see something that looks like this:
+<--Image goes here-->
 
-## Clean Up (optional)
-Since we've been chatting about folder structure, let's remove some files and folders that we won't be using to help make things a little easier to understand and navigate. You don't have to do this if you don't want to, but it will make your code a lot cleaner and prevent errors related to stuff you're not actually working on. If deleting stuff makes you feel anxious, just make a commit before you proceed so that you can always return to this point and see how the starter repo handles toast or solito slugs, for example. For our project, you can safely delete:
+The props available to you are usually what you would expect them to be named, but when you're uncertain about what props a component offers you, there are a couple places to look. Most of the style props available come from React Native's style properties for view, layout, or text, so I usually check the RN docs first. However, if it's a Tamagui-specific style prop, you'll need the tamagui docs. At the bottom of your component's page in the docs, you'll usually see what base component was extended to create that component, along with any additional props that were added. From there, check the component that was extended, and so on, until you end up at either Stack or Text, which are the foundational components for Tamagui. If you haven't found the prop you're looking for, it's probably in the RN docs, or it doesn't exist.
+
+## Shorthands
+The above works, and it's really clear what you're doing to anyone familiar with CSS. However, for more complex styling it can start to take up a lot of space and, frankly, just take quite a while to type. So Tamagui makes shorthands available to you. Again, if you're familiar with tailwind, this is going to feel familiar. The shorthands are usually intuitive abbreviations of full property names. So to achieve the same styling as above, you could instead write:
+```tsx
+    <XStack br='30px' dsp='flex' f={1} fw='wrap' bg='#c5c5c5'>
+      <H1>Hello World!</H1>
+    </XStack>
+```
+Which is a lot more concise. Honestly, I have mixed feelings about shorthands, because they're a bit more cryptic for anyone else not familiar with Tamagui. But ultimately, I've decided to use them for this tutorial (and the code that built it) because although there's a small learning curve to figure out what each does, the reduction in space makes the code easier for me to read and write. No hard feelings if you disagree.
+
+At the time of this writing, I don't see a complete list of shorthands anywhere in the Tamagui docs. So I have pulled these from Tamagui's source code on github. I suggest saving them for reference somewhere if you plan on using shorthands.
+
 ```bash
-apps/next/app
-apps/next/pages/user
-apps/expo/app/user
-packages/app/features/user
-packages/app/provider/ToastViewport.tsx
-packages/app/provider/ToastViewport.web.tsx
-packages/ui/src/CustomToast.tsx
-packages/ui/src/NativeToast.tsx
-packages/ui/src/MyComponent.tsx
+# web-only
+ussel: 'userSelect'
+cur: 'cursor'
+
+# tamagui
+pe: 'pointerEvents'
+
+# text
+col: 'color'
+ff: 'fontFamily'
+fos: 'fontSize'
+fost: 'fontStyle'
+fow: 'fontWeight'
+ls: 'letterSpacing'
+lh: 'lineHeight'
+ta: 'textAlign'
+tt: 'textTransform'
+ww: 'wordWrap'
+
+# view
+ac: 'alignContent'
+ai: 'alignItems'
+als: 'alignSelf'
+b: 'bottom'
+bc: 'backgroundColor'
+bg: 'backgroundColor'
+bbc: 'borderBottomColor'
+bblr: 'borderBottomLeftRadius'
+bbrr: 'borderBottomRightRadius'
+bbw: 'borderBottomWidth'
+blc: 'borderLeftColor'
+blw: 'borderLeftWidth'
+boc: 'borderColor'
+br: 'borderRadius'
+bs: 'borderStyle'
+brw: 'borderRightWidth'
+brc: 'borderRightColor'
+btc: 'borderTopColor'
+btlr: 'borderTopLeftRadius'
+btrr: 'borderTopRightRadius'
+btw: 'borderTopWidth'
+bw: 'borderWidth'
+dsp: 'display'
+f: 'flex'
+fb: 'flexBasis'
+fd: 'flexDirection'
+fg: 'flexGrow'
+fs: 'flexShrink'
+fw: 'flexWrap'
+h: 'height'
+jc: 'justifyContent'
+l: 'left'
+m: 'margin'
+mah: 'maxHeight'
+maw: 'maxWidth'
+mb: 'marginBottom'
+mih: 'minHeight'
+miw: 'minWidth'
+ml: 'marginLeft'
+mr: 'marginRight'
+mt: 'marginTop'
+mx: 'marginHorizontal'
+my: 'marginVertical'
+o: 'opacity'
+ov: 'overflow'
+p: 'padding'
+pb: 'paddingBottom'
+pl: 'paddingLeft'
+pos: 'position'
+pr: 'paddingRight'
+pt: 'paddingTop'
+px: 'paddingHorizontal'
+py: 'paddingVertical'
+r: 'right'
+shac: 'shadowColor'
+shar: 'shadowRadius'
+shof: 'shadowOffset'
+shop: 'shadowOpacity'
+t: 'top'
+w: 'width'
+zi: 'zIndex'
+
+# compiler output
+bls = 'borderLeftStyle'
+brs = 'borderRightStyle'
+bts = 'borderTopStyle'
+bbs = 'borderBottomStyle'
+bxs = 'boxSizing'
+bxsh = 'boxShadow'
+ox = 'overflowX'
+oy = 'overflowY'
 ```
-Now when you try to run the app, it will fail (because there are references in the code to those files and directories) so use your debugging skills to locate all of those references and remove them. While you're at it, if you're using a syntax highlighting feature that shows when imports and other variables go unusued, clear those out too.
 
-Once the app is rendering without errors again on both web and mobile, you're ready to commit changes and proceed!
+You can also add your own shorthands in the createTamagui config, but more on that later.
 
+## Tokens
+Now that you know how to style, and style concisely, let's take a look at tokens. Tokens are more or less for sizing things. For example:
+- How tall should all my buttons be?
+- How much space do I want for padding around my button's text?
+- What size should I use for text?
+- What radius should I use at the corners?
+
+Tokens are one of those all-too-common examples of a programming term that intimidated me at first glance because I assumed they were a complex concept, but that turned out to actually just be a new name for a basic idea. A token is just a styling variable. So instead of writing `borderRadius='30px'`, tamagui would have you write `borderRadius='$7'.
+
+You might be thinking: why convert sizes from pixels, which are numbers, to tokens which are just... other numbers? Well, first off, it's important to mention that they don't have to be. You could use tokens called small, medium, and large, for example. But nonetheless, it seems at first glance like an unnecessary layer of abstraction and complexity.
+
+Let's explore the logic behind them with an example. Say you want to have a consistent border radius of 30px on all the borders of your app. You could do this as we did in the shorthands section above:
+```tsx
+    <XStack br='30px' dsp='flex' f={1} fw='wrap' bg='#c5c5c5'>
+      <H1>Hello World!</H1>
+    </XStack>
+```
+
+And you could repeat that everywhere you have a border radius throughout your app. But then what happens if you (or your design team) decide to change your standard border radius to 28px instead? You'll have to search through your potentially gigantic code base for everywhere that you use a border radius and update it to 28px. The solution to this problem is obvious: instead of hard-coding `borderRadius='30px'` throughout your app, you create a variable, like `radius1 = 30px`. Then, you can write this:
+
+```tsx
+    <XStack br=radius1 dsp='flex' f={1} fw='wrap' bg='#c5c5c5'>
+      <H1>Hello World!</H1>
+    </XStack>
+```
+
+And when you want to change the border radius value, you only have to do it in one place - where radius1 is defined. Radius1 is a basic example of a token. In reality, you want a range of size options, not just one radius value, so Tamagui provides an array of standard tokens. Further, Tamagui's tokens are designed so that they scale nicely together, so text sizes and button heights and border radii, for example, don't all turn out to the same pixel value, but pixel values that work nicely together. And just for the record, "radius1" is not actually a standard token in tamagui, I was just using that name for clarity. All of Tamagui's tokens start with a dollar sign, and all of the size tokens are just numbers (e.g. '$5').
+
+Tamagui also uses tokens for colors. So instead of the above code, we could write:
+
+```tsx
+    <XStack br=radius1 dsp='flex' f={1} fw='wrap' bg='$red'>
+      <H1>Hello World!</H1>
+    </XStack>
+```
+
+or
+
+```tsx
+    <XStack br=radius1 dsp='flex' f={1} fw='wrap' bg='$background'>
+      <H1>Hello World!</H1>
+    </XStack>
+```
+
+The motivation here is the same - if you wanted to update your definition of red, or your standard background color, you only have to change one line of code.
+
+## Moving on
+Well done! If you've been able to confirm that inline styles are updating your components on both web and mobile, you're ready to move on to the next lesson.
