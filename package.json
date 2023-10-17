@@ -24,14 +24,14 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-refresh": "^0.14.0",
-    "react-native-svg": "13.4.0",
+    "react-native-svg": "^13.13.0",
     "react-native-web": "^0.18.12"
   },
   "dependencies": {
     "@babel/runtime": "^7.18.9",
     "@manypkg/cli": "^0.19.1",
     "@nderscore/tamagui-typescript-plugin": "^0.5.3",
-    "@tamagui/animations-css": "^1.58.0",
+    "@tamagui/animations-css": "latest",
     "check-dependency-version-consistency": "^3.0.3",
     "eslint": "^8.21.0",
     "node-gyp": "^9.3.1",
