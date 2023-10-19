@@ -1,9 +1,9 @@
 import { ScrollView, XStack, YStack, Theme, ColorModePreview, MyHeader, NavMenu } from '@my/ui'
 import { useState, ReactNode } from 'react'
 
-type Visible = boolean;
+type Visible = boolean
 
-export function Layout({children}: {children: ReactNode}) {
+export function Layout({ children }: { children: ReactNode }) {
   const [isVisible, setIsVisible] = useState<Visible>(false)
   /*
   turn this on to make the menu visibility default size dependent.
@@ -23,14 +23,14 @@ export function Layout({children}: {children: ReactNode}) {
   }
 
   return (
-    <YStack display='flex' f={1}>
-      <MyHeader handlePress={handlePress} />
-      <XStack>
-        <NavMenu isVisible={isVisible} closeFn={() => setIsVisible(false)} />
-        <ScrollView tag='main'>
-          {children}
-        </ScrollView>
-      </XStack>
-    </YStack>
+    <Theme name='dark'>
+      <YStack display='flex' f={1}>
+        <MyHeader handlePress={handlePress} />
+        <XStack>
+          <NavMenu isVisible={isVisible} closeFn={() => setIsVisible(false)} />
+          <ScrollView tag='main'>{children}</ScrollView>
+        </XStack>
+      </YStack>
+    </Theme>
   )
 }
