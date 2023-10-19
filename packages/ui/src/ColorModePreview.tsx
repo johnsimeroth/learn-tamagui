@@ -1,4 +1,13 @@
-import { YStack, Theme, H1, H2, Paragraph, Card, useThemeName, ThemeName, SizableText, Text} from 'tamagui'
+import {
+  YStack,
+  Theme,
+  Heading,
+  H2,
+  Paragraph,
+  Card,
+  useThemeName,
+  ThemeName,
+} from 'tamagui'
 import { useState } from 'react'
 
 import { CustomSelect } from './CustomSelect'
@@ -24,9 +33,9 @@ export function ColorModePreview() {
       >
         <YStack ai='center' w='100%'>
           <Card elevation='$1' p='$4.5' w='100%'>
-            <H1 textTransform='uppercase' ta='center'>
+            <Heading size='$12' ta='center'>
               Learn Tamagui
-            </H1>
+            </Heading>
           </Card>
         </YStack>
         <H2 textTransform='uppercase'>{themeName} mode</H2>
@@ -43,9 +52,7 @@ export function ColorModePreview() {
         <Paragraph fontWeight='400' fontStyle='italic'>
           Seems like a weird use-case for a mobile app, Johnathan, why make one?
         </Paragraph>
-        <Paragraph>
-          Well... just to prove that it works!
-        </Paragraph>
+        <Paragraph>Well... just to prove that it works!</Paragraph>
         <H3Centered>Base Theme</H3Centered>
         <ComponentGroupStack />
         <Theme name='alt1'>

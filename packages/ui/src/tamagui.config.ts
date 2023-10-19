@@ -12,11 +12,11 @@ const headingFont = createInterFont({
   },
   transform: {
     6: 'uppercase',
-    7: 'none',
   },
   weight: {
     6: '400',
     7: '700',
+    15: '900',
   },
   color: {
     6: '$colorFocus',
@@ -34,7 +34,9 @@ const headingFont = createInterFont({
     15: -6,
   },
   face: {
+    400: { normal: 'Inter', italic: 'InterItalic' },
     700: { normal: 'InterBold' },
+    900: { normal: 'InterBlack' },
   },
 })
 
@@ -52,12 +54,12 @@ const bodyFont = createInterFont(
   }
 )
 
-const xs = 660;
-const sm = 800;
-const md = 1020;
-const lg = 1280;
-const xl = 1420;
-const xxl = 1600;
+const xs = 660
+const sm = 800
+const md = 1020
+const lg = 1280
+const xl = 1420
+const xxl = 1600
 
 export const config = createTamagui({
   defaultFont: 'body',
