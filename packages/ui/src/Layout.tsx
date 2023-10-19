@@ -26,7 +26,7 @@ export function Layout({children}: {children: ReactNode}) {
     <YStack display='flex' f={1}>
       <MyHeader handlePress={handlePress} />
       <XStack>
-        <NavMenu isVisible={isVisible} />
+        <NavMenu isVisible={isVisible} closeFn={() => setIsVisible(false)} />
         <ScrollView tag='main'>
           {children}
         </ScrollView>

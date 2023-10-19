@@ -1,3 +1,8 @@
+pre {
+  white-space: pre;
+}
+
 a {
   text-decoration: none;
 }
+

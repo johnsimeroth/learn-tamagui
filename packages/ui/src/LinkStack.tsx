@@ -10,6 +10,6 @@ export const LinkStack = styled(YStack, {
   animation: 'fast',
   hoverStyle: {
     scale: 1.1,
-    backgroundColor: 'rgba(117,159,110,0.7)'
+    backgroundColor: '$green9',
   }
 });
