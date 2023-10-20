@@ -1,4 +1,6 @@
 # Learn the ins and outs of tamagui
+The first lesson is up on the [deployed site](https://learn-tamagui.vercel.app/). More comming soon.
+
 ## Current Scope
 - This project currently contains a page with some of the main tamagui UI components in both light and dark modes, with selectable tint.
 - This is useful if you're looking to get a quick sense of what the main components of the UI kit look like in a variety of themes.
