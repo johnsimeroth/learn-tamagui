@@ -1,10 +1,11 @@
-import { ScrollView, XStack, YStack, Theme, ColorModePreview, MyHeader, NavMenu } from '@my/ui'
+import { ScrollView, XStack, YStack, Theme } from 'tamagui'
 import { useState, ReactNode } from 'react'
 
-type Visible = boolean
+import { MyHeader } from './MyHeader'
+import { NavMenu } from './NavMenu'
 
 export function Layout({ children }: { children: ReactNode }) {
-  const [isVisible, setIsVisible] = useState<Visible>(false)
+  const [isVisible, setIsVisible] = useState<boolean>(false)
   /*
   turn this on to make the menu visibility default size dependent.
   also need to replace useState(false) with useState(null).

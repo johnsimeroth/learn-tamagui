@@ -1,4 +1,4 @@
-import { XStack, Separator, SizableText, Button } from '@my/ui'
+import { XStack, Separator, SizableText, Button } from 'tamagui'
 import { Menu } from '@tamagui/lucide-icons'
 import { LinkHeader as Link } from './LinkHeader'
 
