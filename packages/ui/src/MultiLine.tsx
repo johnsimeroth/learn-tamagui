@@ -1,10 +1,12 @@
-import { SizableText } from 'tamagui';
+import { SizableText, GetProps } from 'tamagui';
 
-export function MultiLine({ children }:{ children: string }) {
+type Props = GetProps<typeof SizableText>;
+
+export function MultiLine(props: Props) {
   return (
     <>
-      {children.split('\n').map((line: string, i: number) => (
-        <SizableText key={i}>{line}</SizableText>
+      {props.children.split('\n').map((line: string, i: number) => (
+        <SizableText key={i} {...props}>{line}</SizableText>
       ))}
     </>
   )
