@@ -31,11 +31,6 @@
     "web": {
       "favicon": "./assets/favicon.png"
     },
-    "extra": {
-      "eas": {
-        "projectId": "learn-tamagui"
-      }
-    },
     "plugins": [
       "expo-router"
     ]
