@@ -17,14 +17,15 @@ export function Lesson1() {
 
       <H2>Inline Styling</H2>
       <SizableText>
-        This probably isn't your first experience with inline styling, so I'll keep this
-        short. Inline styling makes it really clear where your styles are being
-        applied, and removes the need to wire up classnames. However, it's gotten a bad rap in terms
-        of performance. Tamagui enables you to write inline styles with minimal performance trade
-        offs. How? Rather than paraphrase, I'll quote directly from the <LinkInline href='https://tamagui.dev/docs/intro/why-a-compiler'>docs:</LinkInline>
+        This probably isn't your first experience with inline styling, so I'll keep this short.
+        Inline styling makes it really clear where your styles are being applied, and removes the
+        need to wire up classnames. However, it's gotten a bad rap in terms of performance. Tamagui
+        enables you to write inline styles with minimal performance trade offs. How? Rather than
+        paraphrase, I'll quote directly from the{' '}
+        <LinkInline href='https://tamagui.dev/docs/intro/why-a-compiler'>docs:</LinkInline>
       </SizableText>
       <YStack pl='$2' blc='$green9' blw='$1' my='$2.5' ml='$5'>
-        <MultiLine {...{color: '$color11'}}>
+        <MultiLine {...{ color: '$color11' }}>
           {`@tamagui/static is an optimizing compiler for React Native with four main features:
   - Extracts all types of styling syntax into atomic CSS.
   - Removes a high % of inline styles with partial evaluation and hoisting.
@@ -81,15 +82,15 @@ export function Lesson1() {
       </SizableText>
 
       <H2>Tokens</H2>
-      <MultiLine>{`Now that you know how to style, and style concisely, let's take a look at tokens. Tokens are more or less for sizing things. For example:
+      <MultiLine>{`Now that you know how to style, and style concisely, let's take a look at tokens. Tokens are a way of standardizing and dynamically adjusting your styles. There are two main categories for tokens in tamagui: sizing, and colors. Let's start with sizing. Sizing tokens are used to answer questions like:
 - How tall should all my buttons be?
 - How much space do I want for padding around my button's text?
 - What size should I use for text?
-- What radius should I use at the corners?
+- What radius should I use at the corners of various components?
 
-Tokens are one of those all-too-common examples of a programming term that intimidated me at first glance because I assumed they were a complex concept, but that turned out to actually just be a new name for a basic idea. A token is just a styling variable. So instead of writing \`borderRadius='30px'\`, tamagui would have you write \`borderRadius='$7'.
+Tokens are one of those all-too-common examples of a programming term that might sound intimidating, but is actually just be a new name for a basic idea. A token is just a styling variable. So instead of writing \`borderRadius='30px'\`, tamagui would have you write \`borderRadius='$7'.
 
-You might be thinking: why convert sizes from pixels, which are numbers, to tokens which are just... other numbers? Well, first off, it's important to mention that they don't have to be. You could use tokens called small, medium, and large, for example. But nonetheless, it seems at first glance like an unnecessary layer of abstraction and complexity.
+You might be thinking: why convert sizes from pixels, which are numbers, to tokens which are just... other numbers? Well, first off, it's important to mention that they don't have to be. You could use tokens called '$small', '$medium', and '$large', for example. But nonetheless, it may seem at first glance like an unnecessary layer of abstraction and complexity.
 
 Let's explore the logic behind them with an example. Say you want to have a consistent border radius of 30px on all the borders of your app. You could do this as we did in the shorthands section above:`}</MultiLine>
       <Pre>{shorthandCode}</Pre>
@@ -105,13 +106,13 @@ Let's explore the logic behind them with an example. Say you want to have a cons
       <Pre>{tokenCode}</Pre>
 
       <MultiLine>
-        {`And when you want to change the border radius value, you only have to do it in one place - where radius1 is defined. Radius1 is a basic example of a token. In reality, you want a range of size options, not just one radius value, so Tamagui provides an array of standard tokens. Further, Tamagui's tokens are designed so that they scale nicely together, so text sizes and button heights and border radii, for example, don't all turn out to the same pixel value, but pixel values that work nicely together. And just for the record, "radius1" is not actually a standard token that comes built in with tamagui's default configuration, I was just using that name for clarity. All of Tamagui's default tokens start with a dollar sign, and all of the size tokens are just numbers (e.g. '$5').
+        {`And when you want to change the border radius value, you only have to do it in one place - where radius1 is defined. Radius1 is a basic example of a token. In reality, you want a range of size options, not just one radius value, so Tamagui provides an array of standard size tokens. Further, Tamagui's tokens are designed so that they scale nicely together, so text sizes and button heights and border radii, for example, don't all turn out to the same pixel value, but pixel values that work nicely together. And just for the record, "radius1" is not actually a standard token that comes built in with tamagui's default configuration, I was just using that name for clarity. All of Tamagui's default tokens start with a dollar sign, and all of the size tokens are just numbers (e.g. '$5').
 
-        Tamagui also uses tokens for colors. So instead of the above code, we could write:`}
+        Tamagui also uses tokens for colors. So instead of the above code, we could replace the hex color code with '$red':`}
       </MultiLine>
       <Pre>{redTokenCode}</Pre>
 
-      <SizableText>or</SizableText>
+      <SizableText>or something more generic like '$background'</SizableText>
 
       <Pre>{backgroundTokenCode}</Pre>
 
