@@ -4,7 +4,7 @@ import { H1, H2, H3, SizableText, YStack, LinkInline, MultiLine, Pre } from '@my
 
 export function Lesson0() {
   return (
-    <YStack mx='10%' my='$2.5'>
+    <YStack mx='10%' my='$2.5' miw={400}>
       <H1>Lesson 0</H1>
       <H2>Setup, Folder Structure, and Resources</H2>
       <MultiLine>
@@ -27,17 +27,11 @@ export function Lesson0() {
       </SizableText>
       <Pre>{`npm create tamagui@latest`}</Pre>
       <MultiLine>
-        {`Select Next/Expo/Solito for the project template. Follow any other command prompts. This may
-        take a few minutes to run while it sets up a functioning project. Once complete, \`cd\` into
-        the directory that was created by the install command. e.g. \`cd myTamaguiApp\`.
+        {`Select Next/Expo/Solito for the project template. Follow any other command prompts. This may take a few minutes to run while it sets up a functioning project. Once complete, \`cd\` into the directory that was created by the install command. e.g. \`cd myTamaguiApp\`.
         Run 'yarn' to install dependencies.
-        Run \`yarn web\` and navigate to the localhost port listed in the terminal output to see the
-        project on web.
-        Run \`yarn native\` in *a separate terminal* and follow command line prompts to see the
-        project in expo.
-        Both of these commands result in dev builds that are faster to build and enable hot reloads,
-        but don't get optimized by the tamagui compiler. We'll get to that later.
-        Now that you've got a working project, let's take a look at the repo structure.`}
+        Run \`yarn web\` and navigate to the localhost port listed in the terminal output to see the project on web.
+        Run \`yarn native\` in *a separate terminal* and follow command line prompts to see the project in expo.
+        Both of these commands result in dev builds that are faster to build and enable hot reloads, but don't get optimized by the tamagui compiler. We'll get to that later. Now that you've got a working project, let's take a look at the repo structure.`}
       </MultiLine>
       <H2>Folder Layout</H2>
       <SizableText>
@@ -60,14 +54,10 @@ export function Lesson0() {
       </SizableText>
       <H3>apps/</H3>
       <MultiLine>
-        {`The \`apps/\` directory, as mentioned above, is for platform specific code. So if you expand
-        it you'll see an \`apps/expo\` folder, and an \`apps/next\` folder. You'll usually only need to
-        interact with these folders for a few reasons. Some (but not all) example reasons are listed
-        below:
+        {`The \`apps/\` directory, as mentioned above, is for platform specific code. So if you expand it you'll see an \`apps/expo\` folder, and an \`apps/next\` folder. You'll usually only need to interact with these folders for a few reasons. Some (but not all) example reasons are listed below:
         1. Adding navigation between screens in your app, which should always be platform-specific.
         2. Installing native-specific dependencies (which you'll do in the expo folder).
-        3. Adjusting platform-specific configuration files (e.g. adding or configuring next
-        plugins).
+        3. Adjusting platform-specific configuration files (e.g. adding or configuring next plugins).
         There are other cases, but hopefully the pattern is somewhat clear based on these three.`}
       </MultiLine>
       <H3>Don't Sweat</H3>
@@ -77,8 +67,7 @@ export function Lesson0() {
       </SizableText>
       <H2>Hello World!</H2>
       <MultiLine>
-        {`Let's get to the exciting stuff: making changes in code that you can see on screen!
-        Pop quiz: Since this is code that we will want to see on both native and web, we're going to navigate to the...
+        {`Let's get to the exciting stuff: making changes in code that you can see on screen! Pop quiz: Since this is code that we will want to see on both native and web, we're going to navigate to the...
         .
         .
         .
@@ -102,12 +91,7 @@ export function Lesson0() {
       </SizableText>
       <Pre>{deleteList}</Pre>
       <MultiLine>
-        {`Now when you try to run the app, it will fail (because there are references in the code to
-        those files and directories) so use your debugging skills to locate all of those references
-        and remove them. While you're at it, if you're using a syntax highlighting feature that
-        shows when imports and other variables go unusued, clear those out too.
-        Once the app is rendering without errors again on both web and mobile, you're ready to
-        commit changes and proceed!`}
+        {`Now when you try to run the app, it will fail (because there are references in the code to those files and directories) so use your debugging skills to locate all of those references and remove them. While you're at it, if you're using a syntax highlighting feature that shows when imports and other variables go unusued, clear those out too. Once the app is rendering without errors again on both web and mobile, you're ready to commit changes and proceed!`}
       </MultiLine>
       <H2>Additional Resources</H2>
       <SizableText>

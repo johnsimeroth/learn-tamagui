@@ -2,7 +2,7 @@ import { styled, SizableText } from 'tamagui'
 
 export const LinkText = styled(SizableText, {
   name: 'LinkText',
-  display: 'flex',
+  display: 'inline',
   alignSelf: 'flex-start',
   cursor: 'pointer',
   animation: 'fast',
