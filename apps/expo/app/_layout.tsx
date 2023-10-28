@@ -1,9 +1,9 @@
 import { DarkTheme, DefaultTheme, ThemeProvider } from '@react-navigation/native'
 import { Provider } from 'app/provider'
 import { useFonts } from 'expo-font'
-import { Stack, Slot } from 'expo-router'
+import { Drawer } from 'expo-router/drawer'
 import { useColorScheme } from 'react-native'
-import { Layout } from '@my/ui'
+import { Theme } from '@my/ui'
 
 export default function HomeLayout() {
   const [loaded] = useFonts({
@@ -21,11 +21,28 @@ export default function HomeLayout() {
   }
   return (
     <Provider>
-      <ThemeProvider value={scheme === 'dark' ? DarkTheme : DefaultTheme}>
-        <Layout>
-          <Stack />
-        </Layout>
-      </ThemeProvider>
+      <Theme name='dark'>
+        <ThemeProvider value={DarkTheme}>
+          <Drawer>
+              <Drawer.Screen
+                name='index'
+                options={{ drawerLabel: 'Home', title: 'Components Demo' }}
+              />
+              <Drawer.Screen
+                name='lesson/0'
+                options={{ drawerLabel: 'Lesson 0', title: 'Setup' }}
+              />
+              <Drawer.Screen
+                name='lesson/1'
+                options={{ drawerLabel: 'Lesson 1', title: 'Styles and Tokens' }}
+              />
+              <Drawer.Screen
+                name='lesson/2'
+                options={{ drawerLabel: 'Lesson 2', title: 'Using styled()' }}
+              />
+          </Drawer>
+        </ThemeProvider>
+      </Theme>
     </Provider>
   )
 }

@@ -4,7 +4,7 @@ import { H1, H2, H3, SizableText, YStack, LinkInline, MultiLine, Pre } from '@my
 
 export function Lesson1() {
   return (
-    <YStack mx='10%' my='$2.5' miw={400}>
+    <YStack mx='10%' my='$2.5'>
       <H1>Lesson 1</H1>
       <H2>Inline Styling, Shorthands, and Tokens</H2>
       <MultiLine>

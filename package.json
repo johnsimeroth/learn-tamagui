@@ -7,6 +7,7 @@
   ],
   "scripts": {
     "native": "cd apps/expo && yarn start",
+    "native:prod": "cd apps/expo && yarn start:prod",
     "watch": "yarn workspaces foreach -pi run watch",
     "vercel:install": "yarn set version stable && yarn install",
     "web": "yarn build && cd apps/next && yarn next",
