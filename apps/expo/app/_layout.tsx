@@ -1,8 +1,11 @@
+import { useEffect } from 'react';
 import { DarkTheme, DefaultTheme, ThemeProvider } from '@react-navigation/native'
-import { Provider } from 'app/provider'
 import { useFonts } from 'expo-font'
 import { Drawer } from 'expo-router/drawer'
 import { useColorScheme } from 'react-native'
+import * as ScreenOrientation from 'expo-screen-orientation';
+
+import { Provider } from 'app/provider'
 import { Theme } from '@my/ui'
 
 export default function HomeLayout() {
@@ -15,6 +18,9 @@ export default function HomeLayout() {
     // InterLight: require('@tamagui/font-inter/otf/Inter-Light.otf'),
   })
   const scheme = useColorScheme()
+  useEffect(() => {
+    ScreenOrientation.lockAsync(ScreenOrientation.OrientationLock.PORTRAIT_UP)
+  }, [])
 
   if (!loaded) {
     return null
