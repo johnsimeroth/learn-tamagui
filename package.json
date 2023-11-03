@@ -26,13 +26,13 @@
     "react-dom": "^18.2.0",
     "react-refresh": "^0.14.0",
     "react-native-svg": "^13.13.0",
-    "react-native-web": "^0.18.12"
+    "react-native-web": "~0.19.6"
   },
   "dependencies": {
     "@babel/runtime": "^7.18.9",
     "@manypkg/cli": "^0.19.1",
     "@nderscore/tamagui-typescript-plugin": "^0.5.3",
-    "@tamagui/animations-css": "^1.75.4",
+    "@tamagui/animations-css": "^1.76.0",
     "check-dependency-version-consistency": "^3.0.3",
     "eslint": "^8.21.0",
     "node-gyp": "^9.3.1",
