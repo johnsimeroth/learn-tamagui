@@ -1,14 +1,16 @@
 import {
+  XStack,
   YStack,
   Theme,
   Heading,
   H2,
   Paragraph,
   Card,
+  Switch,
   useThemeName,
   ThemeName,
 } from 'tamagui'
-import { useState } from 'react'
+import { useState, Dispatch, SetStateAction } from 'react'
 
 import { CustomSelect } from './CustomSelect'
 import { ComponentGroupStack } from './ComponentGroupStack'
@@ -16,7 +18,12 @@ import { H3Centered } from './H3Centered'
 
 const subThemeOptions = ['Red', 'Pink', 'Orange', 'Yellow', 'Green', 'Blue', 'Purple']
 
-export function ColorModePreview() {
+interface ColorModeProps {
+  isDark?: boolean,
+  setIsDark?: Dispatch<SetStateAction<boolean>>
+}
+
+export function ColorModePreview({isDark, setIsDark} : ColorModeProps) {
   const [subTheme, setSubTheme] = useState('red')
   const themeName = useThemeName()
 
@@ -38,7 +45,12 @@ export function ColorModePreview() {
             </Heading>
           </Card>
         </YStack>
-        <H2 textTransform='uppercase'>{themeName} mode</H2>
+        <XStack jc='space-between'>
+          <H2 textTransform='uppercase'>{themeName} mode</H2>
+          <Switch checked={isDark} onCheckedChange={(checked) => { setIsDark && setIsDark(checked)}} $platform-web={{dsp: 'none'}}>
+            <Switch.Thumb animation='fast' />
+          </Switch>
+        </XStack>
         <Paragraph fontSize='$6'>Change tint with the dropdown below</Paragraph>
         <CustomSelect
           w={200}
