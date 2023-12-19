@@ -1,8 +1,6 @@
 import { ScrollView, XStack, YStack, Theme } from 'tamagui'
 import { useState, ReactNode } from 'react'
-
-import { MyHeader } from '@my/ui/src/MyHeader'
-import { NavMenu } from '@my/ui/src/NavMenu'
+import { MyHeader, NavMenu } from '@my/ui'
 
 export function Layout({ children }: { children: ReactNode }) {
   const [isVisible, setIsVisible] = useState<boolean>(false)
