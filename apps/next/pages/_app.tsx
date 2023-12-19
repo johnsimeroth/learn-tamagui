@@ -5,10 +5,9 @@ import '../public/webCustom.css'
 import 'raf/polyfill'
 
 import { NextThemeProvider, useRootTheme } from '@tamagui/next-theme'
-import { ScrollView, XStack, YStack, Theme } from 'tamagui'
 import { Provider } from 'app/provider'
 import Head from 'next/head'
-import React, { useState, ReactNode } from 'react'
+import React from 'react'
 import type { SolitoAppProps } from 'solito'
 import { Layout } from 'app/features/layout/Layout'
 
