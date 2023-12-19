@@ -5,12 +5,12 @@ import '../public/webCustom.css'
 import 'raf/polyfill'
 
 import { NextThemeProvider, useRootTheme } from '@tamagui/next-theme'
+import { ScrollView, XStack, YStack, Theme } from 'tamagui'
 import { Provider } from 'app/provider'
 import Head from 'next/head'
-import React from 'react'
+import React, { useState, ReactNode } from 'react'
 import type { SolitoAppProps } from 'solito'
-
-import { Layout } from '@my/ui'
+import { Layout } from 'app/features/layout/Layout'
 
 if (process.env.NODE_ENV === 'production') {
   require('../public/tamagui.css')
