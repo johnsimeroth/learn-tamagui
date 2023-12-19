@@ -4,7 +4,7 @@ import { LinkHeader as Link } from './LinkHeader'
 
 export function MyHeader({ handlePress }: { handlePress: () => void }) {
   return (
-    <XStack tag='header' jc='space-between' paddingVertical='$3' paddingHorizontal='$5' borderBottomColor='$borderColor' borderBottomWidth='$1'>
+    <XStack tag='header' bg='$background' jc='space-between' py='$3' px='$5' borderBottomColor='$borderColor' borderBottomWidth='$1'>
       <Button size='$2' onPress={handlePress}>
         <Menu />
       </Button>

@@ -49,6 +49,7 @@ export function StackDrawer({
   return (
     <YStack
       display={isVisible ? 'flex' : 'none'}
+      bg='$background'
       borderRightColor='$borderColor'
       borderRightWidth='$1'
     >

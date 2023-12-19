@@ -1,23 +1,9 @@
 import { ScrollView, XStack, YStack, Theme } from 'tamagui'
 import { useState, ReactNode } from 'react'
-
-import { MyHeader } from './MyHeader'
-import { NavMenu } from './NavMenu'
+import { MyHeader, NavMenu } from '@my/ui'
 
 export function Layout({ children }: { children: ReactNode }) {
   const [isVisible, setIsVisible] = useState<boolean>(false)
-  /*
-  turn this on to make the menu visibility default size dependent.
-  also need to replace useState(false) with useState(null).
-  causes layout shift on initial load.
-
-  const media = useMedia();
-
-  useEffect(() => {
-    if (isVisible !== null) return;
-    setIsVisible(media.gtLg);
-  }, [media]);
-  */
 
   function handlePress() {
     setIsVisible(!isVisible)
@@ -29,7 +15,7 @@ export function Layout({ children }: { children: ReactNode }) {
         <MyHeader handlePress={handlePress} />
         <XStack>
           <NavMenu isVisible={isVisible} closeFn={() => setIsVisible(false)} />
-          <ScrollView tag='main'>{children}</ScrollView>
+          <ScrollView tag='main' bg='$background'>{children}</ScrollView>
         </XStack>
       </YStack>
     </Theme>

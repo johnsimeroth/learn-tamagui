@@ -9,8 +9,7 @@ import { Provider } from 'app/provider'
 import Head from 'next/head'
 import React from 'react'
 import type { SolitoAppProps } from 'solito'
-
-import { Layout } from '@my/ui'
+import { Layout } from 'app/features/layout/Layout'
 
 if (process.env.NODE_ENV === 'production') {
   require('../public/tamagui.css')
